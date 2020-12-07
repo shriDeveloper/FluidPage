@@ -22,7 +22,7 @@
               
                 {% for template in themes %}
                     <div class="column is-4 ">
-                        <div class="card" data-aos="fade-right">
+                        <div class="card" data-aos="fade-right" style="background: #0f1021;;">
                             <div class="card-image">
                               <figure class="image is-4by3">
                                 <img src="/media/{{template.theme}}" alt="Placeholder image">
@@ -41,7 +41,76 @@
         </div>
     </div>    
 
+   
+
+{% else %}
+
+<div class="container mt-6">
+      <h1 class="title is-1 has-text-centered">Feature's</h1>
+
+        <div class="columns mt-6">
+              
+                
+                    <div class="column is-4 ">
+                        <div class="card" data-aos="fade-right" style="background: #0f1021;;">
+                            <div class="card-image">
+                              <figure class="image is-4by3">
+                                <img src="/media/signup.png" alt="Placeholder image">
+                              </figure>
+                            </div>
+                            <div class="card-content">
+                              <div class="content">
+                                <a href="#" class="button is-info is-large is-fullwidth">Simple Sign Ups</a>
+                              </div>
+                            </div>
+                          </div>
+                        <br/>
+                    </div>
+
+                        <div class="column is-4 ">
+                        <div class="card" data-aos="fade-right" style="background: #0f1021;;">
+                            <div class="card-image">
+                              <figure class="image is-4by3">
+                                 <img src="/media/analytics.jpg" alt="Placeholder image">
+                              </figure>
+                            </div>
+                            <div class="card-content">
+                              <div class="content">
+                                <a href="#" class="button is-info is-large is-fullwidth">User Analytics</a>
+                              </div>
+                            </div>
+                          </div>
+                        <br/>
+                    </div>
+
+                        <div class="column is-4 ">
+                        <div class="card" data-aos="fade-right" style="background: #0f1021;;">
+                            <div class="card-image">
+                              <figure class="image is-4by3">
+                                <img src="/media/free.jpg" alt="Placeholder image">
+                              </figure>
+                            </div>
+                            <div class="card-content">
+                              <div class="content">
+                                <a href="#" class="button is-info is-large is-fullwidth">Free*</a>
+                              </div>
+                            </div>
+                          </div>
+                        <br/>
+                    </div>
+
+                
+        </div>
+    </div>    
+
+
+
+
+
 {% endif %}
+
+
+    <br/><br/><br/><br/><br/><br/>
 
 
 <footer class="footer" style="background-color: black;">

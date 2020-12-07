@@ -1,6 +1,6 @@
 <section class="section is-medium"  style="background-color: #171332;">
     <div class="container" style="text-align: center;">
-        <h1 class="title is-1" style="color: white;">FluidUI</h1>
+        <h1 class="title is-1" style="color: white;">FluidPage (Beta)</h1>
         <br />
         <h2 class="subtitle is-3" style="color: white;">
             Validate Your Idea's Before Launching & Test Early Sign Ups 
@@ -22,9 +22,11 @@
                     </p>
                   </div>
                 </form>
+                 <br/>
               {% if ERROR %}
-              <br/>
               <div class="box"><h4 class="title is-4">{{ERROR}}</h4></div>
+              {% else %}
+              <div class="box"><h4 class="title is-4">10+ ideas have pre-launched !</h4></div>
               {% endif %}
             
             </div>

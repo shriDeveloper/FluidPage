@@ -36,7 +36,7 @@
               <div class="field">
                 {% csrf_token %}
                 <div class="control">
-                  <input class="input is-medium" autocomplete="off" type="text" placeholder="Name" name="subscriber">
+                  <input class="input is-medium" required type="email" autocomplete="off" type="text" placeholder="Name" name="subscriber">
                 </div>
               </div>
               <button class="button is-block is-primary is-fullwidth is-medium" type="submit"> Notify Me</button>
@@ -66,7 +66,7 @@ particlesJS.load('particles-js', '../media/theme_json/theme_2_json.json', functi
   <footer class="footer" style="background-color: black;">
     <div class="content has-text-centered">
       <p>
-        <h1 style="color: white;">Made with love by Shriniket Deshmukh</h1>
+        <h1 style="color: white;">Made with <i class="fa fa-heart"></i> @FluidPage</h1>
       </p>
     </div>
   </footer>

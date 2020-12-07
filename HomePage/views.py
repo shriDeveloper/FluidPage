@@ -55,7 +55,6 @@ def publish(request):
     product_theme = request.POST.get('THEME')
     product_email = request.POST.get('EMAIL')
 
-
     try:
         product = Product.objects.get(name = product_name)
         product.maker = product_maker
@@ -76,10 +75,11 @@ def publish(request):
 def dashboard(request,launch_id):
     if request.method == 'POST':
         email = request.POST.get('u_mail')
+        maker = Product.objects.get(slug = launch_id)
         page = Maker.objects.get(product = launch_id)
         subscribers = Subscriber.objects.filter(product = launch_id)
         if email == page.email:
-            return render(request,'Admin/Admin.html',{'VERIFIED':True,'SUBSCRIBERS':subscribers})
+            return render(request,'Admin/Admin.html',{'VERIFIED':True,'SUBSCRIBERS':subscribers,'MAKER':maker.maker})
         else:
             print("UN Verified EMail: "+page.email)
     return render(request,'Admin/Admin.html')

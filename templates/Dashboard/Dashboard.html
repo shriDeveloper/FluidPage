@@ -38,23 +38,24 @@ body{
       <form method="POST">
 
         {% csrf_token %} 
-      <h1 class="title is-4" style="text-align: center;">Content</h1>
+      <h1 class="title is-2" style="text-align: center;">Content</h1>
+      <br/>
       <div class="field">
-        <label class="label">Product Name</label>
+        <h3 class="title is-4">Product Name</h3>
         <div class="control">
           <input class="input" type="text" required autocomplete="off" placeholder="Enter Product Name" value="{{NAME}}" id="p_name" name="product_name">
         </div>
       </div>
-      
+        <br/>
       <div class="field">
-        <label class="label">Product Info</label>
+        <label class="title is-4">Product Info</label>
         <div class="control">
           <textarea class="textarea" required maxlength="238" autocomplete="off" placeholder="Enter Product Info" id="p_msg" name="product_summary">{{SUMMARY}}</textarea>
         </div>
       </div>      
-      
+        <br/>
       <div class="field">
-        <label class="label">Product Maker</label>
+        <label class="title is-4">Product Maker</label>
         <div class="control">
           <input class="input" type="text" autocomplete="off" placeholder="Text input" id="p_maker" value="{{MAKER}}" name="product_maker">
         </div>
@@ -65,14 +66,14 @@ body{
       <h1 class="title is-4" style="text-align: center;">Settings</h1>
 
       <div class="field">
-        <label class="label">Background Color</label>
+        <label class="title is-4">Background Color</label>
         <div class="control">
           <input class="input" disabled type="text" placeholder="Body Color Code" id='background_color'>
         </div>
       </div>
-      
+        <br/>
       <div class="field">
-        <label class="label">Text Color</label>
+        <label class="title is-4">Text Color</label>
         <div class="control">
           <input class="input" disabled type="text" placeholder="Enter Text Color Code">
         </div>
@@ -82,7 +83,7 @@ body{
       <h1 class="title is-4" style="text-align: center;">Image URL</h1>
       
       <div class="field">
-        <label class="label"></label>
+        <label class="title is-4"></label>
         <div class="control">
           <input class="input" type="file" disabled placeholder="Enter Text Color Code">
         </div>
@@ -92,14 +93,14 @@ body{
       <h1 class="title is-4" style="text-align: center;">SEO</h1>
       
       <div class="field">
-        <label class="label">URL Title</label>
+        <label class="title is-4">URL Title</label>
         <div class="control">
           <input class="input" disabled type="text" placeholder="Enter Text Color Code">
         </div>
       </div>
 
     <div class="field">
-        <label class="label">URL Description</label>
+        <label class="title is-4">URL Description</label>
         <div class="control">
           <input class="input" disabled type="text" placeholder="Enter Text Color Code">
         </div>

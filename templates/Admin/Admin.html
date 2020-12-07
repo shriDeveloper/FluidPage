@@ -8,12 +8,12 @@
 <div class="container">
     <div class="columns">
         <div class="column is-3"></div>
-        <div class="column box is-6 mt-6" style="padding: 90px;">
-            <h1 class="title is-1 has-text-centered">Login</h1>
+        <div class="column box is-6 mt-6" style="padding: 90px;background-color: #0f1021;">
+            <h1 class="title is-1 has-text-centered" style="color: white;">Login</h1>
             <form method="POST">
                 {% csrf_token %}
             <div class="field">
-                <label class="label">Enter Email:</label>
+                <label class="label" style="color: white;">Enter Email:</label>
                 <div class="control">
                   <input class="input" type="email" placeholder="Enter email" name="u_mail">
                 </div>
@@ -76,7 +76,7 @@
                     <div class="hero-body">
                         <div class="container">
                             <h1 class="title">
-                                Hello, Admin.
+                                Hello, {{MAKER}}.
                             </h1>
                             <h2 class="subtitle">
                                 I hope you are having a great day!
@@ -88,20 +88,20 @@
                     <div class="tile is-ancestor has-text-centered">
                         <div class="tile is-parent">
                             <article class="tile is-child box">
-                                <p class="title">439k</p>
-                                <p class="subtitle">Subsribers</p>
+                                <p class="title">{{SUBSCRIBERS |length}}</p>
+                                <p class="subtitle">Subscribers </p>
                             </article>
                         </div>
                         <div class="tile is-parent">
                             <article class="tile is-child box">
-                                <p class="title">59k</p>
-                                <p class="subtitle">Views</p>
+                                <p class="title">{{VIEWS |length}}</p>
+                                <p class="subtitle">Views (coming soon*)</p>
                             </article>
                         </div>
                         <div class="tile is-parent">
                             <article class="tile is-child box">
-                                <p class="title">3.4k</p>
-                                <p class="subtitle">Clicks</p>
+                                <p class="title">{{CLICKS |length}}</p>
+                                <p class="subtitle">Clicks (coming soon*)</p>
                             </article>
                         </div>
                         <!-- <div class="tile is-parent">
@@ -117,7 +117,7 @@
                         <div class="card events-card">
                             <header class="card-header">
                                 <p class="card-header-title">
-                                    Subsribers
+                                    Subscribers
                                 </p>
                                 <a href="#" class="card-header-icon" aria-label="more options">
                   <span class="icon">

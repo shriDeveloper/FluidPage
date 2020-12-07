@@ -1,9 +1,7 @@
 
-  <section  class="hero is-large" style="height: 100%;width: 100%;background-color: #0f1021;" >
-    <div id="particles-js"></div>
+  <section  class="hero is-large is-fullwidth" style="background-color: #0f1021;" >
     <div class="hero-body" >
-      <!--background:url('http://localhost:8000/media/cool-background.png');background-size: cover;background-repeat:no-repeat;-->
-
+     
       <div class="columns" >
         <div class="column is-12" >
               
@@ -35,7 +33,7 @@
               <div class="field">
                 {% csrf_token %}
                 <div class="control">
-                  <input class="input is-medium" autocomplete="off" type="text" placeholder="Name" name="subscriber">
+                  <input class="input is-medium" autocomplete="off" required type="email" placeholder="Name" name="subscriber">
                 </div>
               </div>
               <button class="button is-block is-primary is-fullwidth is-medium" type="submit"> Notify Me</button>
@@ -62,10 +60,11 @@ particlesJS.load('particles-js', '../media/theme_json/theme_1_json.json', functi
 });
   </script>
   
-  <footer class="footer" style="background-color: black;">
+
+   <footer class="footer" style="background-color: black;">
     <div class="content has-text-centered">
       <p>
-        <h1 style="color: white;">Made with love by Shriniket Deshmukh</h1>
+        <h1 style="color: white;">Made with <i class="fa fa-heart"></i> @FluidPage</h1>
       </p>
     </div>
   </footer>
