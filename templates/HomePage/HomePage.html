@@ -1,0 +1,58 @@
+{% extends '../Utilities/Base.html' %}
+
+{% block title %} SSpace - "Lauch Before You Launch Businesse's" !{% endblock %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}
+
+{% block body %}
+
+{% include '../Utilities/Components/Header.html' %}
+
+{% if themes %}
+    <div class="container mt-6">
+      <h1 class="title is-1 has-text-centered">Choose Your Theme</h1>
+
+        <div class="columns mt-6">
+              
+                {% for template in themes %}
+                    <div class="column is-4 ">
+                        <div class="card" data-aos="fade-right">
+                            <div class="card-image">
+                              <figure class="image is-4by3">
+                                <img src="/media/{{template.theme}}" alt="Placeholder image">
+                              </figure>
+                            </div>
+                            <div class="card-content">
+                              <div class="content">
+                                <a href="build/{{template.theme_id}}?email={{email}}" class="button is-info is-large is-fullwidth">Choose</a>
+                              </div>
+                            </div>
+                          </div>
+                        <br/>
+                    </div>
+
+                {% endfor %}
+        </div>
+    </div>    
+
+{% endif %}
+
+
+<footer class="footer" style="background-color: black;">
+  <div class="content has-text-centered">
+    <p>
+      <h1 style="color: white;">Made with ❤️  by Shriniket Deshmukh</h1>
+    </p>
+  </div>
+</footer>
+
+
+
+{% endblock %}
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <style>
+
+      </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="google-site-verification" content="7GjKr0RuYoaxuqxd3m5TbVMEbllVm5wiiYpAEJUZPn8" />
+    <title> SSpace - "Lauch Before You Launch Businesse's" !    </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/seo-marketing-flat-circle-vol-1/96/110Browsing_connectivity_global_globe_web_webpage-512.png">
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    
+    <script src="https://vincentgarreau.com/particles.js/assets/_build/js/lib/particles.js"></script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  </head>
+  <body style="font-family: 'Karla', sans-serif;">
+    {% if HTML %}
+    <div id="particles-js" style="position: absolute;height: 100%;width: 100%;"></div>    
+    {{HTML}}
+    {% endif %}
+    
+    
+    {% if ERROR %}
+
+    
+  <section class="section is-large">
+    <div class="container">
+      <div class="columns  is-vcentered">
+        <div class="column is-12 has-text-centered">
+          <h1 class="title">{{ERROR}}</h1>
+        </div>
+        <div class="column has-text-centered">
+        </div>
+      </div>
+    </div>
+  </section>
+
+    {% endif %}
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true
+    });
+  </script>
+
+
+  </body>
+</html>
+

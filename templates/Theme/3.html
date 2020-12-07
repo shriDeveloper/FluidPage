@@ -1,0 +1,73 @@
+
+  <section  class="hero is-large" style="height: 100%;width: 100%;background-color: #ff1f5a;" >
+    <div id="particles-js"></div>
+    <div class="hero-body" >
+      <!--background:url('http://localhost:8000/media/cool-background.png');background-size: cover;background-repeat:no-repeat;-->
+
+      <div class="columns" >
+        <div class="column is-12" >
+              
+      <div class="container has-text-centered">
+        <h1 style="font-size: 70px;color: white;text-shadow: 2px 1px black;" class="title is-1">
+          😃 Hi, I'm {{MAKER}} - {{NAME}}
+        </h1>
+      </div>
+        </div>
+      </div>
+    
+      <br/>
+      <div class="columns is-gapped">
+        <div class="column is-2"></div>
+        <div class="column is-5" data-aos="fade-down">
+          <h1 class="title  has-text-justified is-2" style="color: white;text-shadow: 2px 1px black;">
+            {{SUMMARY}}
+            
+          </h1>
+          <h2 style="color: white;" class=" title  is-4 has-text-weight-bold is-family-sans-serif">
+            @{{MAKER}}
+          </h2>
+        </div>
+    
+        <div data-aos="fade-right" class="column is-3 ml-6">
+          <!-- SIGN UP FORM GOES HERE -->
+          <div class="column card right has-text-centered" style="padding: 50px;">
+            <h1 class="title is-3">Subscribe Early!!</h1>
+            <form  method="POST">
+              <div class="field">
+                {% csrf_token %}
+                <div class="control">
+                  <input class="input is-medium" autocomplete="off" type="text" placeholder="Name" name="subscriber">
+                </div>
+              </div>
+              <button class="button is-block is-primary is-fullwidth is-medium" type="submit"> Notify Me</button>
+            </form>
+          </div>
+          <br/>
+          {% if SUBSCRIBED %}
+          <div class="box has-text-centered">
+            <h1 class="title is-4">{{SUBSCRIBED}}</h1>
+          </div>
+          {% endif %}
+          <!-- ENDS HERE -->
+          </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <script>
+
+    /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+particlesJS.load('particles-js', '../media/theme_json/theme_3_json.json', function() {
+  console.log('callback - particles.js config loaded');
+});
+  </script>
+  
+  <footer class="footer" style="background-color: black;">
+    <div class="content has-text-centered">
+      <p>
+        <h1 style="color: white;">Made with love by Shriniket Deshmukh</h1>
+      </p>
+    </div>
+  </footer>
+

@@ -1,0 +1,174 @@
+{% extends '../Utilities/Base.html' %}
+
+
+
+{% block title %} SSpace - "Lauch Before You Launch Businesse's" !{% endblock %}
+
+
+{% block libraries %}
+
+{% endblock %}
+
+body{
+  margin:0;
+
+}
+
+{% block css %}
+
+
+::-webkit-scrollbar              { background:#0f1021; }
+::-webkit-scrollbar-button       {  }
+::-webkit-scrollbar-track        { /* 3 */ }
+::-webkit-scrollbar-track-piece  { /* 4 */ }
+::-webkit-scrollbar-thumb        { background:black; }
+::-webkit-scrollbar-corner       { /* 6 */ }
+::-webkit-resizer                { /* 7 */ }
+
+{% endblock %}
+
+
+{% block body %}
+
+
+<div class="columns is-gapless">
+  <div class="column is-3" data-aos="fade-right">
+    <div class="box mt-5" style="border-radius:0px;" >
+
+      <form method="POST">
+
+        {% csrf_token %} 
+      <h1 class="title is-4" style="text-align: center;">Content</h1>
+      <div class="field">
+        <label class="label">Product Name</label>
+        <div class="control">
+          <input class="input" type="text" required autocomplete="off" placeholder="Enter Product Name" value="{{NAME}}" id="p_name" name="product_name">
+        </div>
+      </div>
+      
+      <div class="field">
+        <label class="label">Product Info</label>
+        <div class="control">
+          <textarea class="textarea" required maxlength="238" autocomplete="off" placeholder="Enter Product Info" id="p_msg" name="product_summary">{{SUMMARY}}</textarea>
+        </div>
+      </div>      
+      
+      <div class="field">
+        <label class="label">Product Maker</label>
+        <div class="control">
+          <input class="input" type="text" autocomplete="off" placeholder="Text input" id="p_maker" value="{{MAKER}}" name="product_maker">
+        </div>
+      </div>
+      
+      <hr/>
+
+      <h1 class="title is-4" style="text-align: center;">Settings</h1>
+
+      <div class="field">
+        <label class="label">Background Color</label>
+        <div class="control">
+          <input class="input" disabled type="text" placeholder="Body Color Code" id='background_color'>
+        </div>
+      </div>
+      
+      <div class="field">
+        <label class="label">Text Color</label>
+        <div class="control">
+          <input class="input" disabled type="text" placeholder="Enter Text Color Code">
+        </div>
+      </div>
+      
+      <hr/>
+      <h1 class="title is-4" style="text-align: center;">Image URL</h1>
+      
+      <div class="field">
+        <label class="label"></label>
+        <div class="control">
+          <input class="input" type="file" disabled placeholder="Enter Text Color Code">
+        </div>
+      </div>
+
+      <hr/>
+      <h1 class="title is-4" style="text-align: center;">SEO</h1>
+      
+      <div class="field">
+        <label class="label">URL Title</label>
+        <div class="control">
+          <input class="input" disabled type="text" placeholder="Enter Text Color Code">
+        </div>
+      </div>
+
+    <div class="field">
+        <label class="label">URL Description</label>
+        <div class="control">
+          <input class="input" disabled type="text" placeholder="Enter Text Color Code">
+        </div>
+      </div>
+      
+      <br/>
+
+      <div class="field">
+        <div class="control">
+          <input class="button is-large is-fullwidth is-primary" type="submit" value="Save">
+        </div>
+      </div>
+    </form>
+
+    <br/>
+
+      {% if SAVE_STATUS %}
+      <div class="field">
+        <div class="control">
+          <input class="button is-large is-fullwidth is-primary" id="publish" type="button" value="Publish">
+        </div>
+      </div>
+      {% endif %}
+      
+
+    </div>
+  </div>
+
+  <!--LOAD PARTILCLE JS -->
+  <script src="https://vincentgarreau.com/particles.js/assets/_build/js/lib/particles.js"></script>
+  <!--ENDS HERE-->
+
+  <div class="column is-9">
+    <div id="particles-js" style="position: absolute;height: 100%;width: 100%;"></div>
+    {{HTML}}
+  </div>
+</div>
+
+<script>
+
+$.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results==null){
+       return null;
+    }
+    else{
+       return results[1] || 0;
+    }
+}
+
+
+  $(document).ready(function(){
+    $('#publish').click(function(){
+      var product_name = $('#p_name').val();
+      var product_summary = $('#p_msg').val();
+      var product_maker = $('#p_maker').val();
+      var product_email = $.urlParam('email'); 
+      var product_theme = '{{THEME_ID}}';
+    
+      $.ajax({
+        url:'/publish/',
+        type:'POST',
+        data:{'NAME':product_name,'csrfmiddlewaretoken':'{{ csrf_token }}','MAKER':product_maker,'SUMMARY':product_summary,'EMAIL':product_email,'THEME':product_theme},
+        success: function(response){
+          window.open("http://localhost:8000/"+response['launch_name'],"_blank");
+        }
+      });
+    });
+  });
+</script>
+
+{% endblock %}

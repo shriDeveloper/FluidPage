@@ -1,0 +1,172 @@
+{% extends '../Utilities/Base.html' %}
+
+{% block title %} GFBI - 🤩 Pretty Awesome Collection Of Curated Resource's For Your Project !{% endblock %}
+
+{% block body %}
+
+{% if not VERIFIED %}
+<div class="container">
+    <div class="columns">
+        <div class="column is-3"></div>
+        <div class="column box is-6 mt-6" style="padding: 90px;">
+            <h1 class="title is-1 has-text-centered">Login</h1>
+            <form method="POST">
+                {% csrf_token %}
+            <div class="field">
+                <label class="label">Enter Email:</label>
+                <div class="control">
+                  <input class="input" type="email" placeholder="Enter email" name="u_mail">
+                </div>
+              </div>
+            
+              <div class="field mt-5">
+                <div class="control">
+                  <button type="submit" class="button is-link is-fullwidth is-primary">Submit</button>
+                </div>
+              </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% else %}
+
+
+<!-- DASHBAORD -->
+
+
+    <div class="container is-fullhd">
+
+
+    <!-- START NAV -->
+    <nav class="navbar is-white" style="margin-left:17% ;">
+        <div class="container">
+            <div class="navbar-brand">
+                <div class="navbar-burger burger" data-target="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="#">
+            Home
+          </a>
+                    <a class="navbar-item" href="admin.html">
+            Reports
+          </a>
+             
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <!-- END NAV -->
+    <div class="container">
+        <div class="columns">
+            <div class="column is-2 ">
+                
+            </div>
+            <div class="column is-9">
+                <!-- <nav class="breadcrumb" aria-label="breadcrumbs">
+                    Last Login:
+                </nav> -->
+                <section class="hero is-info welcome is-small">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title">
+                                Hello, Admin.
+                            </h1>
+                            <h2 class="subtitle">
+                                I hope you are having a great day!
+                            </h2>
+                        </div>
+                    </div>
+                </section>
+                <section class="info-tiles mt-5">
+                    <div class="tile is-ancestor has-text-centered">
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">439k</p>
+                                <p class="subtitle">Subsribers</p>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">59k</p>
+                                <p class="subtitle">Views</p>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">3.4k</p>
+                                <p class="subtitle">Clicks</p>
+                            </article>
+                        </div>
+                        <!-- <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">19</p>
+                                <p class="subtitle">Exceptions</p>
+                            </article>
+                        </div> -->
+                    </div>
+                </section>
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="card events-card">
+                            <header class="card-header">
+                                <p class="card-header-title">
+                                    Subsribers
+                                </p>
+                                <a href="#" class="card-header-icon" aria-label="more options">
+                  <span class="icon">
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </a>
+                            </header>
+                            <div class="card-table">
+                                <div class="content">
+                                    <table class="table is-fullwidth is-striped">
+                                        <tbody>
+                                            <!--EVERY SUBSRIBER ROW -->
+                                            {% if SUBSCRIBERS %}
+                                            {% for subsriber in SUBSCRIBERS %}
+                                                <tr>
+                                                    <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                                    <td>{{subsriber.email}}</td>
+                                                    <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                                                </tr>
+                                            {% endfor %}
+                                            {% else %}
+                                                <br/>
+                                                <h3 style="text-align: center;">No Subsribers !</h3>
+                                                <br/>
+                                                {% endif %}                                            
+                                            <!--ENDS HERE-->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <footer class="card-footer">
+                                <a href="#" class="card-footer-item">View All</a>
+                            </footer>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+{% endif %}
+
+
+
+{% endblock %}

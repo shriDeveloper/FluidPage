@@ -1,0 +1,35 @@
+<section class="section is-medium"  style="background-color: #171332;">
+    <div class="container" style="text-align: center;">
+        <h1 class="title is-1" style="color: white;">FluidUI</h1>
+        <br />
+        <h2 class="subtitle is-3" style="color: white;">
+            Validate Your Idea's Before Launching & Test Early Sign Ups 
+        </h2>
+        <br />
+        <div class="columns">
+            <div class="column is-4"></div>
+            <div class="column is-4">
+                <form method="POST">
+                    {% csrf_token %}
+                <div class="field is-grouped">
+                    <p class="control is-expanded">
+                      <input class="input  is-large" autocomplete="off" name="product_maker" type="email" placeholder="Add Your Email ">
+                    </p>
+                    <p class="control">
+                      <button type="submit" class="button is-info  is-large">
+                        Create
+                      </button>
+                    </p>
+                  </div>
+                </form>
+              {% if ERROR %}
+              <br/>
+              <div class="box"><h4 class="title is-4">{{ERROR}}</h4></div>
+              {% endif %}
+            
+            </div>
+        </div>
+    </div>
+</section>
+
+
